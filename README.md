@@ -30,12 +30,12 @@ Things you may want to cover:
 # Curl examples
 
 ### curl POST examples
->> https://gist.github.com/subfuzion/08c5d85437d5d4f00e58
+> https://gist.github.com/subfuzion/08c5d85437d5d4f00e58
 ### GET
->> curl -X GET -H -I http://localhost:3000/todos
+> curl -X GET -H -I http://localhost:3000/todos
 ### POST
->> curl -d '{"title":"Mozart", "created_by":"1"}' -H "Content-Type: application/json" -X POST http://localhost:3000/todos
+> curl -d '{"title":"Mozart", "created_by":"1"}' -H "Content-Type: application/json" -X POST http://localhost:3000/todos
 ### PUT
->> curl -d '{"title":"Beethoven"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/todos/1
+> curl -d '{"title":"Beethoven"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/todos/1
 ### DELETE
->> curl -X DELETE -H -I http://localhost:3000/todos/1 
+> curl -X DELETE -H -I http://localhost:3000/todos/1 
