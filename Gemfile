@@ -23,6 +23,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Use to manage JSON web tokens(jwt)
 gem 'jwt'
 
+gem 'active_model_serializers', '~> 0.10.7'
+# It is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel
+gem 'will_paginate', '~> 3.1.0'
+# It is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem 'faker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -32,7 +38,8 @@ gem 'jwt'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'rspec-rails', '~> 3.5'
+  #gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 end
 
 group :development do

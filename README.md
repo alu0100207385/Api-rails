@@ -35,6 +35,10 @@ Things you may want to cover:
 > curl -X GET -I http://localhost:3000/todos
 
 > curl -X GET -H "Authorization:TOKEN" -I http://localhost:3000/todos
+
+> curl -H Accept:'application/vnd.todos.v1+json' -H Authorization:TOKEN' -X GET http://localhost:3000/todos
+
+>  curl -H Accept:'application/vnd.todos.v1+json' -H Authorization:'TOKEN' -X GET "http://localhost:3000/todos?page=1"
 ### POST
 > curl -d '{"title":"Mozart", "created_by":"1"}' -H "Content-Type: application/json" -X POST http://localhost:3000/todos
 
