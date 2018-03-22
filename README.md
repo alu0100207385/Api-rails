@@ -33,10 +33,13 @@ Things you may want to cover:
 > https://gist.github.com/subfuzion/08c5d85437d5d4f00e58
 ### GET
 > curl -X GET -I http://localhost:3000/todos
+
 > curl -X GET -H "Authorization:TOKEN" -I http://localhost:3000/todos
 ### POST
 > curl -d '{"title":"Mozart", "created_by":"1"}' -H "Content-Type: application/json" -X POST http://localhost:3000/todos
+
 > curl -d "name=name&email=mail@email.com&password=foobar&password_confirmation=foobar" -X POST http://localhost:3000/signup
+
 > curl -H "Authorization:TOKEN" -d "title=Beethoven" -X POST http://localhost:3000/todos
 ### PUT
 > curl -d '{"title":"Beethoven"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/todos/1
