@@ -23,6 +23,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use to manage JSON web tokens(jwt)
 gem 'jwt'
 
+# Swagger::Blocks is a DSL for pure Ruby code blocks that can be turned into JSON 
+gem 'swagger-docs'
+
 gem 'active_model_serializers', '~> 0.10.7'
 # It is a pagination library that integrates with Ruby on Rails, Sinatra, Merb, DataMapper and Sequel
 gem 'will_paginate', '~> 3.1.0'

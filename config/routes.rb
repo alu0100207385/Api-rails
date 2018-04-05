@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup',     to: 'users#create'
+
+  get '/api' => redirect('/swagger/dist/index.html?url=/apidocs/api-docs.json')
 end
