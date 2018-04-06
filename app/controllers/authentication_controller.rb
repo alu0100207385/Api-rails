@@ -2,6 +2,17 @@
 class AuthenticationController < ApplicationController
   skip_before_action :authorize_request, only: :authenticate
   # return auth token once user is authenticated
+
+  swagger_controller :authentication, 'Authentication'
+
+  swagger_api :authenticate do
+    summary 'Return auth token once user is authenticated'
+    param :form, "email",    :string, :required, "User email"
+    param :form, "password", :string, :required, "User password"
+    response :success
+    response :server_error, "Internal server error"
+  end
+
   def authenticate
     auth_token =
       AuthenticateUser.new(auth_params[:email], auth_params[:password]).call

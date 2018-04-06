@@ -26,6 +26,7 @@ Things you may want to cover:
 # Source 
 
 * https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one
+* http://billpatrianakos.me/blog/2013/10/13/list-of-rails-status-code-symbols/
 
 # Curl examples
 
