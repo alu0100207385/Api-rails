@@ -3,6 +3,19 @@ class UsersController < ApplicationController
 
   skip_before_action :authorize_request, only: :create
 
+  swagger_controller :users, 'Operations about user'
+
+  swagger_api :create do
+    summary 'Create user'
+    param :form, "name",     :string, :optional, "User name"
+    param :form, "email",    :string, :required, "User email"
+    param :form, "password", :string, :required, "User password"
+    param :form, "password_confirmation", :string, :required, "Password confirmation"
+    response :success
+    response :request_timeout, "Request timeout"
+    response :internal_server_error, "Internal server error"
+  end
+
   # POST /signup
   # return authenticated token upon signup
   def create

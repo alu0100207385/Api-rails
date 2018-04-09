@@ -6,11 +6,12 @@ class AuthenticationController < ApplicationController
   swagger_controller :authentication, 'Authentication'
 
   swagger_api :authenticate do
-    summary 'Return auth token once user is authenticated'
+    summary 'Logs user into the system'
     param :form, "email",    :string, :required, "User email"
     param :form, "password", :string, :required, "User password"
     response :success
-    response :server_error, "Internal server error"
+    response :unauthorized, "Unauthorized"
+    response :internal_server_error, "Internal server error"
   end
 
   def authenticate

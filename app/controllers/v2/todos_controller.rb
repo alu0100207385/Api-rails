@@ -5,10 +5,11 @@ class V2::TodosController < ApplicationController
   #include Swagger::Docs::ImpotentMethods
   #include Swagger::Docs::Methods
   
-  swagger_controller :todos, 'Todos'
+  swagger_controller :todos, 'Todos V2'
 
   swagger_api :index do
-    summary 'Returns all todos'
+    summary 'Returns all todos V2'
+    #param :header, 'Accept', :string, :optional, 'Content Negotiation'
     response :success
     response :unprocessable_entity
     response :unauthorized

@@ -1,0 +1,266 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "todos",
+  "apis": [
+    {
+      "path": "/todos",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authorization-token",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "page",
+              "type": "integer",
+              "description": "Page number",
+              "required": false
+            }
+          ],
+          "summary": "Returns all todos",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal server error"
+            }
+          ],
+          "nickname": "V1::Todos#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/todos",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authorization-token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Todo title",
+              "required": true
+            }
+          ],
+          "summary": "Creates a new todo entity",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal server error"
+            }
+          ],
+          "nickname": "V1::Todos#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/todos/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authorization-token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Todo Id",
+              "required": true
+            }
+          ],
+          "summary": "Find a todo entity by ID",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not found"
+            },
+            {
+              "code": 422,
+              "responseModel": null,
+              "message": "Unprocessable Entity"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal server error"
+            }
+          ],
+          "nickname": "V1::Todos#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/todos/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authorization-token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Todo Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "title",
+              "type": "string",
+              "description": "Todo title",
+              "required": true
+            }
+          ],
+          "summary": "Updates a todo entity",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal server error"
+            }
+          ],
+          "nickname": "V1::Todos#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/todos/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authorization",
+              "type": "string",
+              "description": "Authorization-token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Todo Id",
+              "required": true
+            }
+          ],
+          "summary": "Deletes a todo entity",
+          "responseMessages": [
+            {
+              "code": 200,
+              "responseModel": null,
+              "message": "Ok"
+            },
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not found"
+            },
+            {
+              "code": 500,
+              "responseModel": null,
+              "message": "Internal server error"
+            }
+          ],
+          "nickname": "V1::Todos#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

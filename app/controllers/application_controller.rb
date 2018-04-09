@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
   # called before every action on controllers
   before_action :authorize_request
   attr_reader :current_user
-  Swagger::Docs::Generator::set_real_methods
 
   def inherited(subclass)
     super
@@ -28,9 +27,10 @@ class ApplicationController < ActionController::API
     private
 
     def setup_basic_api_documentation
-      [:index].each do |api_action|
+      [:index, :show, :create, :update, :delete].each do |api_action|
         swagger_api api_action do
-          param :header, 'Authentication-Token', :string, :required, 'Authentication token'
+          #param :header, 'Accept', :string, :optional, 'Content Negotiation'
+          param :header, 'Authorization', :string, :required, 'Authorization-token'
         end
       end
     end
