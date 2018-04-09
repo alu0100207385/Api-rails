@@ -50,3 +50,15 @@ Things you may want to cover:
 > curl -d '{"title":"Beethoven"}' -H "Content-Type: application/json" -X PUT http://localhost:3000/todos/1
 ### DELETE
 > curl -X DELETE -H -I http://localhost:3000/todos/1 
+
+
+# Swagger steps
+
+1. Add swagger-docs gem and install it [https://github.com/richhollis/swagger-docs](https://github.com/richhollis/swagger-docs).
+2. Define swagger in the controllers.
+3. Generate config/initializes/swagger_docs.rb
+4. Add or clone swagger-ui to the project in public folder [https://github.com/swagger-api/swagger-ui.git](https://github.com/swagger-api/swagger-ui.git).
+5. Edit index.html with the URL if you consider.
+6. Add a new routes in routes file, e.g. get '/swagger' => redirect('/apidocs/api').
+7. Run rake swagger:docs.
+8. Run rails server.
